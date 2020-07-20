@@ -5,8 +5,6 @@ HOST_NAME=`/bin/hostname`
 HOST_IP=`/usr/sbin/ipconfig getifaddr en0`
 DATE=`/bin/date +%Y%m%d_%H:%M`
 
-echo $HOST_IP > /script/ip.txt
-
 # 1. Account management
 
 CODE_1="CODE_1"
@@ -195,6 +193,8 @@ else
 	CODE_8=$CODE_8:$RE
 fi
 unset CHK
+rm /script/update.txt
+
 
 echo "Completed."
 
