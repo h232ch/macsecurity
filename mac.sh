@@ -1,9 +1,11 @@
 #!/bin/bash
 
 
-HOST_NAME=`hostname`
-HOST_IP=`ipconfig getifaddr en0`
-DATE=`date +%Y%m%d_%H:%M`
+HOST_NAME=`/bin/hostname`
+HOST_IP=`/usr/sbin/ipconfig getifaddr en0`
+DATE=`/bin/date +%Y%m%d_%H:%M`
+
+echo $HOST_IP > /script/ip.txt
 
 # 1. Account management
 
@@ -12,14 +14,14 @@ ITEM="Password Policy"
 echo "$ITEM Checking.."
 
 # set
-pwpolicy -setglobalpolicy "usingHistory=1"
-pwpolicy -setglobalpolicy "minChars=10"
-pwpolicy -setglobalpolicy "requiresAlpha=2"
-pwpolicy -setglobalpolicy "requiresNumeric=2"
-pwpolicy -setglobalpolicy "maxMinutesUntilChangePassword=129600"
+/usr/bin/pwpolicy -setglobalpolicy "usingHistory=1"
+/usr/bin/pwpolicy -setglobalpolicy "minChars=10"
+/usr/bin/pwpolicy -setglobalpolicy "requiresAlpha=2"
+/usr/bin/pwpolicy -setglobalpolicy "requiresNumeric=2"
+/usr/bin/pwpolicy -setglobalpolicy "maxMinutesUntilChangePassword=129600"
 
 # check
-CHK=`pwpolicy -getglobalpolicy | grep -c "minChars"`
+CHK=`/usr/bin/pwpolicy -getglobalpolicy | grep -c "minChars"`
 
 if [ $CHK -eq 0 ]; then
 	RE="False"
@@ -35,10 +37,10 @@ ITEM="Last Login User Info"
 echo "$ITEM Checking.."
 
 # set
-defaults write /Library/Preferences/com.apple.loginwindow SHOWFULLNAME 1
+/usr/bin/defaults write /Library/Preferences/com.apple.loginwindow SHOWFULLNAME 1
 
 # check
-CHK=`defaults read /Library/Preferences/com.apple.loginwindow.plist | grep -c "SHOWFULLNAME"`
+CHK=`/usr/bin/defaults read /Library/Preferences/com.apple.loginwindow.plist | grep -c "SHOWFULLNAME"`
 
 if [ $CHK -eq 0 ]; then
 	RE="False"
@@ -55,7 +57,7 @@ CODE_3="CODE_3"
 ITEM="Admin account management"
 echo "$ITEM Checking.."
 
-USR=`who | grep "console" | awk '{print $1}'`
+USR=`/usr/bin/who | grep "console" | awk '{print $1}'`
 
 if [ $USR == "lezhin" ]; then
 	RE="False"
@@ -74,7 +76,7 @@ ITEM="Auto Login policy"
 echo "$ITEM Checking.."
 
 # set
-defaults delete /Library/Preferences/com.apple.loginwindow autoLoginUser > /dev/null 2>&1
+/usr/bin/defaults delete /Library/Preferences/com.apple.loginwindow autoLoginUser > /dev/null 2>&1
 rm /etc/kcpassword > /dev/null 2>&1
 
 # check
@@ -94,20 +96,20 @@ ITEM="Screensaver policy"
 echo "$ITEM Checking.."
 
 # set
-defaults write /Library/Preferences/com.apple.screensaver loginWindowIdleTime 600
-defaults write /Library/Preferences/com.apple.screensaver loginWindowModulePath "/System/Library/Screen Savers/FloatingMessage.saver"
-defaults write /Library/Preferences/com.apple.screensaver.plist askForPassword -int 1
+/usr/bin/defaults write /Library/Preferences/com.apple.screensaver loginWindowIdleTime 600
+/usr/bin/defaults write /Library/Preferences/com.apple.screensaver loginWindowModulePath "/System/Library/Screen Savers/FloatingMessage.saver"
+/usr/bin/defaults write /Library/Preferences/com.apple.screensaver.plist askForPassword -int 1
 
 # check
 if [ -f /Library/Preferences/com.apple.screensaver ]; then
 	RE="False"
 	CODE_5=$CODE_5:$RE
 else
-	CHK=`defaults read /Library/Preferences/com.apple.screensaver.plist loginWindowIdleTime`
-	CHK2=`defaults read /Library/Preferences/com.apple.screensaver.plist | grep -c "askForPassword"`
+	CHK=`/usr/bin/defaults read /Library/Preferences/com.apple.screensaver.plist loginWindowIdleTime`
+	CHK2=`/usr/bin/defaults read /Library/Preferences/com.apple.screensaver.plist | grep -c "askForPassword"`
 
 	if [ $CHK2 -eq 1 ]; then
-		CHK2=`defaults read /Library/Preferences/com.apple.screensaver.plist askForPassword`
+		CHK2=`/usr/bin/defaults read /Library/Preferences/com.apple.screensaver.plist askForPassword`
 	else
 		CHK2=0
 	fi
@@ -140,7 +142,7 @@ echo "yes" | sudo systemsetup -setremotelogin off > /dev/null 2>&1
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate -configure -access -off > /dev/null 2>&1
 
 # check vnc
-CHK=`netstat -na | grep "5900" | grep "tcp4" | grep -c "LISTEN"`
+CHK=`/usr/sbin/netstat -na | grep "5900" | grep "tcp4" | grep -c "LISTEN"`
 
 if [ $CHK -ge 1 ]; then
 	RE="False"
@@ -158,10 +160,10 @@ ITEM="Firewall policy"
 echo "$ITEM Checking.."
 
 # set
-defaults write /Library/Preferences/com.apple.alf globalstate -int 1
+/usr/bin/defaults write /Library/Preferences/com.apple.alf globalstate -int 1
 
 # check
-CHK=`defaults read /Library/Preferences/com.apple.alf.plist globalstate`
+CHK=`/usr/bin/defaults read /Library/Preferences/com.apple.alf.plist globalstate`
 if [ $CHK -eq 0 ]; then
 	RE="False"
 	CODE_7=$CODE_7:$RE
@@ -179,11 +181,11 @@ ITEM="Security Policy"
 echo "$ITEM Checking.."
 
 # software 설치
-softwareupdate -ia > /dev/null 2>&1
+/usr/sbin/softwareupdate -ia > /dev/null 2>&1
 
 # check
-softwareupdate -l &> update.txt
-CHK=`cat update.txt | grep -c "No new software available."`
+/usr/sbin/softwareupdate -l &> /script/update.txt
+CHK=`cat /script/update.txt | grep -c "No new software available."`
 
 if [ $CHK -eq 0 ]; then
 	RE="False"
@@ -199,7 +201,7 @@ echo "Completed."
 # 결과전송
 RESULT="$CODE_1, $CODE_2, $CODE_3, $CODE_4, $CODE_5, $CODE_6, $CODE_7, $CODE_8"
 echo $RESULT
-echo {\"ip\":\"$HOST_IP\", \"time\":\"$DATE\", \"status\":\"$RESULT\"} > result.json
-curl -d @./result.json -H "Content-Type: application/json" -X POST http://192.168.0.2:8080/pcs
+echo {\"ip\":\"$HOST_IP\", \"time\":\"$DATE\", \"status\":\"$RESULT\"} > /script/result.json
+/usr/bin/curl -d @/script/result.json -H "Content-Type: application/json" -X POST http://192.168.0.2:8080/pcs
 
 
