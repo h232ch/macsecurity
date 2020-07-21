@@ -7,9 +7,9 @@
 ```bash
 sudo ~/Downloads/mac_apply.sh
 ```
-If you want to fix excution period, Open the <br>
-'mac_apply.sh' and fix the crontab period. <br>
-Crontab will excute the script as the schedule. <br>
+ If you want to fix excution period, Open the <br>
+ 'mac_apply.sh' and fix the crontab period. <br>
+ Crontab will excute the script as the schedule. <br>
 
 3. Security Setting List
 ```bash
@@ -23,7 +23,7 @@ Crontab will excute the script as the schedule. <br>
 "Security Policy"
 ```
 
-The script will fix and check the MacOS Security<br>
-Setting to be safe and Send<br>
-Backend System The result of MacOS.<br><br>
+ The script will fix and check the MacOS Security<br>
+ Setting to be safe and Send<br>
+ Backend System The result of MacOS.<br><br>
 4. Backend Source : https://github.com/h232ch/setsecurity
