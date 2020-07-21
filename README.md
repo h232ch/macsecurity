@@ -23,6 +23,7 @@ Crontab will excute the script as the schedule.
 "Security Policy"
 ```
 
-The script will fix and check the MacOS Security Setting to be safe
-and Send Backend System The result of MacOS.
+The script will fix and check the MacOS Security
+Setting to be safe and Send
+Backend System The result of MacOS.
 4. Backend Source : https://github.com/h232ch/setsecurity
