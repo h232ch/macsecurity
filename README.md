@@ -7,9 +7,9 @@
 ```bash
 sudo ~/Downloads/mac_apply.sh
 ```
-If you want to fix excution period, Open the \n
-'mac_apply.sh' and fix the crontab period. \n
-Crontab will excute the script as the schedule. \n
+If you want to fix excution period, Open the <br>
+'mac_apply.sh' and fix the crontab period. <br>
+Crontab will excute the script as the schedule. <br>
 
 3. Security Setting List
 ```bash
