@@ -1,4 +1,4 @@
-# MacSecurity
+# Mac OS Security
 
 ## Usage
 
