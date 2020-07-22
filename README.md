@@ -25,8 +25,10 @@
  - Remote Policy
  - Firewall policy
  - Security Policy
+ 
+ The script will fix and check the MacOS Security
+ Setting to be safe and Send
+ Backend System The result of MacOS.
 ```
- The script will fix and check the MacOS Security<br>
- Setting to be safe and Send<br>
- Backend System The result of MacOS.<br>
+
 ### Backend Source : https://github.com/h232ch/setsecurity
