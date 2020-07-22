@@ -11,11 +11,11 @@
 1. Download Scripts
 2. Excute Script (mac_apply.sh)
  - sudo curl -L https://raw.githubusercontent.com/h232ch/macsecurity/master/mac_apply.sh -o ~/mac.apply.sh| sudo chmod 755 ~/mac.apply.sh | sudo ~/mac.apply.sh
-```
- If you want to fix excution period, Open the <br>
- 'mac_apply.sh' and fix the crontab period. <br>
- Crontab will excute the script as the schedule. <br>
-```bash
+ 
+ `If you want to fix excution period, Open the 
+ 'mac_apply.sh' and fix the crontab period.
+ Crontab will excute the script as the schedule.`
+
 3. Security Setting List
 Code 1. Password Policy
 Code 2.Last Login User Info
