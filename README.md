@@ -2,7 +2,7 @@
 
 ## Operation
 ```bash
-1. MacOS Security Script Crontab Apply
+1. Apply MacOS Security Script Crontab 
 2. Send Backend MacOS Security Script Result
 ```
 
