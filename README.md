@@ -1,5 +1,11 @@
 # Mac OS Security
 
+## Operation
+```bash
+1. MacOS Security Script Crontab Apply
+2. Send Backend MacOS Security Script Result
+```
+
 ## Usage
 
 1. Download Scripts
