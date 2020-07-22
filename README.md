@@ -25,5 +25,5 @@ sudo curl -L https://raw.githubusercontent.com/h232ch/macsecurity/master/mac_app
 
  The script will fix and check the MacOS Security<br>
  Setting to be safe and Send<br>
- Backend System The result of MacOS.<br><br>
+ Backend System The result of MacOS.<br>
 ### Backend Source : https://github.com/h232ch/setsecurity
