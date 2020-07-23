@@ -183,7 +183,7 @@ echo "$ITEM Checking.."
 
 # check
 /usr/sbin/softwareupdate -l &> /Users/$USR/script/update.txt
-CHK=`cat /script/update.txt | grep -c "No new software available."`
+CHK=`cat /Users/$USR/script/update.txt | grep -c "No new software available."`
 
 if [ $CHK -eq 0 ]; then
 	RE="False"
