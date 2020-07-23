@@ -206,7 +206,7 @@ echo $RESULT
 # /usr/bin/curl -d @/script/result.json -H "Content-Type: application/json" -X POST http://172.16.214.99:8080/pcs
 
 echo {\"ip\":\"$HOST_IP\", \"time\":\"$DATE\", \"status\":\"$RESULT\"} > /Users/$USR/.script/result.json
-/usr/bin/curl -d @/Users/$USR/.script/result.json -H "Content-Type: application/json" -X POST http://172.16.10.49:8080/pcs
+/usr/bin/curl -d @/Users/$USR/.script/result.json -H "Content-Type: application/json" -X POST http://172.16.10.149:8080/pcs
 
 DRIVE_FILE="/Users/$USR/mac.apply.sh"
 
