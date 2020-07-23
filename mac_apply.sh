@@ -1,5 +1,5 @@
 
-spctl --master--disable
+spctl --master-disable
 mount -uw
 killall Finder
 mkdir /script
