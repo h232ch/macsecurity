@@ -55,7 +55,7 @@ CODE_3="CODE_3"
 ITEM="Admin account management"
 echo "$ITEM Checking.."
 
-USR=`/usr/bin/who | grep "console" | awk '{print $1}'`
+USR=`/usr/bin/who | grep "console" | awk '{print $1}' | head -n 1`
 
 if [ $USR == "lezhin" ]; then
 	RE="False"
