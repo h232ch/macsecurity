@@ -1,6 +1,6 @@
 
 spctl --master-disable
-mount -uw
+mount -uw /
 killall Finder
 mkdir /script
 curl -L https://raw.githubusercontent.com/h232ch/macsecurity/master/mac.sh -o ~/mac.sh
