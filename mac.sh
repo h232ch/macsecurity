@@ -202,6 +202,6 @@ echo "Completed."
 RESULT="$CODE_1, $CODE_2, $CODE_3, $CODE_4, $CODE_5, $CODE_6, $CODE_7, $CODE_8"
 echo $RESULT
 echo {\"ip\":\"$HOST_IP\", \"time\":\"$DATE\", \"status\":\"$RESULT\"} > /script/result.json
-/usr/bin/curl -d @/script/result.json -H "Content-Type: application/json" -X POST http://192.168.0.2:8080/pcs
+/usr/bin/curl -d @/script/result.json -H "Content-Type: application/json" -X POST http://172.16.214.99:8080/pcs
 
 
