@@ -12,3 +12,4 @@ mv ~/mac.sh ~/.script
 (echo "*/5 * * * * /Users/$USR/.script/mac.sh") | sudo crontab -
 # /.script/mac.sh
 /Users/$USR/.script/mac.sh
+spctl --master-enable
