@@ -1,4 +1,4 @@
-
+USR=`/usr/bin/who | grep "console" | awk '{print $1}' | head -n 1`
 spctl --master-disable
 mount -uw /
 killall Finder
