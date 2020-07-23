@@ -182,7 +182,7 @@ echo "$ITEM Checking.."
 /usr/sbin/softwareupdate -ia > /dev/null 2>&1
 
 # check
-/usr/sbin/softwareupdate -l &> /script/update.txt
+/usr/sbin/softwareupdate -l &> /Users/$USR/script/update.txt
 CHK=`cat /script/update.txt | grep -c "No new software available."`
 
 if [ $CHK -eq 0 ]; then
@@ -193,7 +193,7 @@ else
 	CODE_8=$CODE_8:$RE
 fi
 unset CHK
-rm /script/update.txt
+rm /Users/$USR/script/update.txt
 
 
 echo "Completed."
@@ -204,6 +204,6 @@ echo $RESULT
 # echo {\"ip\":\"$HOST_IP\", \"time\":\"$DATE\", \"status\":\"$RESULT\"} > /script/result.json
 # /usr/bin/curl -d @/script/result.json -H "Content-Type: application/json" -X POST http://172.16.214.99:8080/pcs
 
-echo {\"ip\":\"$HOST_IP\", \"time\":\"$DATE\", \"status\":\"$RESULT\"} > /User/$USR/script/result.json
-/usr/bin/curl -d @/User/$USR/script/result.json -H "Content-Type: application/json" -X POST http://172.16.214.99:8080/pcs
+echo {\"ip\":\"$HOST_IP\", \"time\":\"$DATE\", \"status\":\"$RESULT\"} > /Users/$USR/script/result.json
+/usr/bin/curl -d @/Users/$USR/script/result.json -H "Content-Type: application/json" -X POST http://172.16.214.99:8080/pcs
 
