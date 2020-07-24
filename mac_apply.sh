@@ -9,7 +9,7 @@ mkdir ~/.script
 mv ~/mac.sh ~/.script
 # mv ~/mac.sh /.script/
 # (echo "*/5 * * * * /.script/mac.sh") | sudo crontab -
-(echo "0 13 20-24 * 5 /Users/$USR/.script/mac.sh") | sudo crontab -
+(echo "0 11 20-24 * 5 /Users/$USR/.script/mac.sh") | sudo crontab -
 # /.script/mac.sh
 /Users/$USR/.script/mac.sh
 spctl --master-enable
