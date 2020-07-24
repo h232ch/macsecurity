@@ -2,7 +2,6 @@ USR=`/usr/bin/who | grep "console" | awk '{print $1}' | head -n 1`
 spctl --master-disable
 mount -uw /
 killall Finder
-# mkdir /script
 curl -L https://raw.githubusercontent.com/h232ch/macsecurity/master/mac.sh -o ~/mac.sh
 chmod 755 ~/mac.sh
 mkdir ~/.script
