@@ -11,6 +11,6 @@ mv ~/mac.sh ~/.script
 # (echo "*/5 * * * * /.script/mac.sh") | sudo crontab -
 # (echo "0 11 20-24 * 5 /Users/$USR/.script/mac.sh") | sudo crontab -
 # /.script/mac.sh
-(echo "* * 1-7 * * [ \"$(date '+\%u')\" = \"1\" ] && /Users/$USR/.script/mac.sh") | sudo crontab -l
+(echo "* * 1-7 * * "'[ "$(date '+\%u')=1" ] && /Users/$USR/.script/mac.sh') | sudo crontab -
 /Users/$USR/.script/mac.sh
 spctl --master-enable
