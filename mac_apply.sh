@@ -1,4 +1,10 @@
 USR=`/usr/bin/who | grep "console" | awk '{print $1}' | head -n 1`
+SCHOME="/Users/$USR/.script"
+
+if [ -d $SCHOME ]; then
+	rm -rf $SCHOME
+fi
+
 spctl --master-disable
 mount -uw /
 killall Finder
