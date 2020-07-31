@@ -17,6 +17,7 @@ echo "$ITEM Checking.."
 /usr/bin/pwpolicy -setglobalpolicy "minChars=8"
 /usr/bin/pwpolicy -setglobalpolicy "requiresAlpha=1"
 /usr/bin/pwpolicy -setglobalpolicy "requiresNumeric=1"
+/usr/bin/pwpolicy -setglobalpolicy "requiresSymbol=1"
 /usr/bin/pwpolicy -setglobalpolicy "maxMinutesUntilChangePassword=129600"
 
 # check
