@@ -2,6 +2,7 @@
 
 
 HOST_NAME=`/bin/hostname`
+MAC_NAME=`/sbin/ifconfig en0 |grep ether |awk '{print $2}'
 HOST_IP=`/usr/sbin/ipconfig getifaddr en0`
 DATE=`/bin/date +%Y%m%d_%H:%M`
 
@@ -203,7 +204,7 @@ echo "Completed."
 # 결과전송
 RESULT="$CODE_1, $CODE_2, $CODE_3, $CODE_4, $CODE_5, $CODE_6, $CODE_7, $CODE_8"
 echo $RESULT
-# echo {\"ip\":\"$HOST_IP\", \"time\":\"$DATE\", \"status\":\"$RESULT\"} > /script/result.json
+# echo {\"ip\":\"$HOST_IP\", \"MAC\":\"$MAC_NAME\", \"time\":\"$DATE\", \"status\":\"$RESULT\"} > /script/result.json
 # /usr/bin/curl -d @/script/result.json -H "Content-Type: application/json" -X POST http://172.16.214.99:8080/pcs
 
 echo {\"ip\":\"$HOST_IP\", \"time\":\"$DATE\", \"status\":\"$RESULT\"} > /Users/$USR/.script/result.json
