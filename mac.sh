@@ -2,7 +2,7 @@
 
 
 HOST_NAME=`/bin/hostname`
-MAC_NAME=`/sbin/ifconfig en0 |grep ether |awk '{print $2}'
+MAC_NAME=`/sbin/ifconfig en0 |grep ether |awk '{print $2}'`
 HOST_IP=`/usr/sbin/ipconfig getifaddr en0`
 DATE=`/bin/date +%Y%m%d_%H:%M`
 
