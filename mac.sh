@@ -219,7 +219,7 @@ echo $RESULT
 # echo {\"ip\":\"$HOST_IP\", \"mac\":\"$MAC_NAME\", \"time\":\"$DATE\", \"status\":\"$RESULT\"} > /script/result.json
 # /usr/bin/curl -d @/script/result.json -H "Content-Type: application/json" -X POST http://172.16.214.99:8080/pcs
 
-echo {\"ip\":\"$HOST_IP\", \"mac\":\"$MAC_NAME\", \"time\":\"$DATE\", \"status\":\"$RESULT\"} > /Users/$USR/.script/result.json
+echo {\"ip\":\"$HOST_IP\", \"mac\":\"$MAC_ADDR\", \"time\":\"$DATE\", \"status\":\"$RESULT\"} > /Users/$USR/.script/result.json
 /usr/bin/curl -d @/Users/$USR/.script/result.json -H "Content-Type: application/json" -X POST http://172.16.10.145:8080/pcs
 
 DRIVE_FILE="/Users/$USR/mac.apply.sh"
