@@ -208,7 +208,7 @@ do
 done
 
 MAC_ADDR=`cat ~/.script/temp2`
-echo $MAC_ADDR
+#echo $MAC_ADDR
 
 \rm ~/.script/temp*
 
