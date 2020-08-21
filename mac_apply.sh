@@ -12,6 +12,7 @@ rm -rf ~/wazuh-agent-latest.pkg
 spctl --master-disable
 mount -uw /
 killall Finder
+# curl -L http://172.16.10.145/mac.sh -o ~/mac.sh
 curl -L https://raw.githubusercontent.com/h232ch/macsecurity/master/mac.sh -o ~/mac.sh
 chmod 755 ~/mac.sh
 mkdir ~/.script
