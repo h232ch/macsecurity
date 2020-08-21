@@ -11,7 +11,7 @@
 1. Download Scripts
 2. Excute Script (mac_apply.sh)
  - sudo curl -L https://raw.githubusercontent.com/h232ch/macsecurity/master/mac_apply.sh -o ~/mac.apply.sh; sudo chmod 755 ~/mac.apply.sh ; sudo ~/mac.apply.sh
- # sudo curl -L http://sm.lezhin.net/files/mac.apply.sh -o ~/mac.apply.sh; sudo chmod 755 ~/mac.apply.sh ; sudo ~/mac.apply.sh
+ # sudo curl -L http://172.16.10.145/mac.apply.sh -o ~/mac.apply.sh; sudo chmod 755 ~/mac.apply.sh ; sudo ~/mac.apply.sh
  
  `If you want to fix excution period, Open the 
  'mac_apply.sh' and fix the crontab period.
