@@ -5,8 +5,7 @@ if [ -d $SCHOME ]; then
 	rm -rf $SCHOME
 fi
 
-# wget -O ~/wazuh-agent-latest.pkg http://sm.lezhin.net/files/wazuh-agent-latest.pkg
-curl -L http://172.16.10.145/wazuh-agent-latest.pkg -o ~/wazuh-agent-latest.pkg
+# curl -L http://172.16.10.145/wazuh-agent-latest.pkg -o ~/wazuh-agent-latest.pkg
 launchctl setenv WAZUH_MANAGER “172.16.10.180” && installer -pkg ~/wazuh-agent-latest.pkg -target /
 rm -rf ~/wazuh-agent-latest.pkg
 
