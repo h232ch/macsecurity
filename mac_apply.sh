@@ -6,8 +6,8 @@ if [ -d $SCHOME ]; then
 fi
 
 # curl -L http://172.16.10.145/wazuh-agent-latest.pkg -o ~/wazuh-agent-latest.pkg
-launchctl setenv WAZUH_MANAGER “172.16.10.180” && installer -pkg ~/wazuh-agent-latest.pkg -target /
-rm -rf ~/wazuh-agent-latest.pkg
+# launchctl setenv WAZUH_MANAGER “172.16.10.180” && installer -pkg ~/wazuh-agent-latest.pkg -target /
+# rm -rf ~/wazuh-agent-latest.pkg
 
 spctl --master-disable
 mount -uw /
